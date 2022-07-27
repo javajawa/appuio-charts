@@ -99,7 +99,7 @@ spec:
             value: "{{ $redis.prefix }}"
           {{- end }}
           command: ["/bin/sh"]
-          args: ["-c", "exec env REDIS_URL=redis://redis:$(REDIS_PASSWORD)@$(REDIS_HOST):$(REDIS_PORT)/$(SNAPPASS_REDIS_DB) snappass"]
+          args: ["-c", "exec env REDIS_URL=redis://:$(REDIS_PASSWORD)@$(REDIS_HOST):$(REDIS_PORT)/$(SNAPPASS_REDIS_DB) snappass"]
           ports:
             - name: http
               containerPort: 5000
